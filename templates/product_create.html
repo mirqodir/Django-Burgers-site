@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- end header section -->
+  </div>
+
+  <!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Book A Table
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form method="post" enctype="multipart/form-data" >
+              {% csrf_token %}
+              <div>
+                <input type="text" class="form-control" name="name_card"placeholder="Mahsulot nomi..." required="" id="name_card" />
+              </div>
+              <div>
+                <input type="text" class="form-control" name="description"placeholder="Maxsulot tarkibi..." cols="40" required="" rows="25" id="description"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" required="" name="price" placeholder="Maxsulot narxi..." id="price" />
+              </div>
+              <div>
+              	<h2 style="color:white;font-size: 25px;">maxsulot rasmi</h2>
+              	<style type="">
+              		input[type='file']{
+              			color: transparent;
+              		}
+              	</style>
+                  <input type="file" required="" class="form-control" name="image" accept="image/*"placeholder="rasm" id="image" />
+              </div>
+        
+              <div class="btn_box">
+                <button type="submit">
+                  Yuborish
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->
+
+
+{% endblock content %}
